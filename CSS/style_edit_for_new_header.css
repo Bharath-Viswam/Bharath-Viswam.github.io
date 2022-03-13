@@ -1,0 +1,148 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+/* body {
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	background-size: cover;
+} */
+/* #newbar {
+	height: 70px;
+	position: fixed;
+	width: 1500px;
+	top: 0px;
+} */
+footer {
+	position: absolute;
+	padding-bottom: 970px;
+	height: 120px;
+	top: 990px;
+}
+#new_img {
+	height: 70px;
+}
+nav.navbar {
+	position: fixed;
+	top: 0;
+}
+
+#navbarNav {
+	padding-left: 40px;
+}
+#navbarNav a {
+	margin-left: 5px;
+	color: white;
+}
+#spane a {
+	position: relative;
+	top: 270px;
+	left: 620px;
+	padding-left: 5px;
+}
+.content {
+	position: absolute;
+	top: 500px;
+	height: 300px;
+	width: 100%;
+	background-color: rgba(250, 250, 250, 0.658);
+}
+.content p {
+	font-weight: 600;
+	word-spacing: 5px;
+	text-align: justify;
+	font-size: large;
+}
+.content span {
+	font-size: larger;
+	color: cadetblue;
+}
+nav.footer_nav {
+	height: 500px;
+	position: relative;
+	top: 800px;
+	margin-bottom: 800px;
+}
+.footerimg img {
+	position: relative;
+	top: 20px;
+	left: 550px;
+}
+nav.navbar.fixed-top {
+	height: 80px;
+	position: relative;
+	top: 0px;
+}
+h4 {
+	color: rgba(214, 218, 221, 0.568);
+}
+.kollam {
+	padding-top: 882px;
+
+	height: 300px;
+	width: 200px;
+}
+.kollam .card {
+	height: 500px;
+	width: 200px;
+}
+
+.tvm {
+	position: absolute;
+	top: 880px;
+	left: 20%;
+	height: 300px;
+	width: 200px;
+}
+.tvm .card {
+	height: 502px;
+	width: 200px;
+}
+.idukki {
+	position: absolute;
+	top: 880px;
+	left: 40%;
+	height: 300px;
+	width: 200px;
+}
+.idukki .card {
+	height: 502px;
+	width: 200px;
+}
+.wayanad {
+	position: absolute;
+	top: 880px;
+	left: 60%;
+	height: 300px;
+	width: 200px;
+}
+.wayanad .card {
+	height: 502px;
+	width: 200px;
+}
+.alappuzha {
+	position: absolute;
+	top: 880px;
+	left: 80%;
+	height: 300px;
+	width: 200px;
+}
+.alappuzha .card {
+	height: 502px;
+}
+.district_button {
+	position: absolute;
+	top: 1400px;
+	left: 40%;
+}
+
+.card-img-top {
+	width: 100%;
+	height: 11vw;
+	object-fit: cover;
+}
+#newimg {
+	width: 10000px;
+}

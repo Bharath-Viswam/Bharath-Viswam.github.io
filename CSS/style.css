@@ -1,0 +1,72 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-size: cover;
+	min-height: 800px;
+}
+header {
+	background-color: black;
+	height: 70px;
+	position: fixed;
+	width: 1500px;
+}
+header img {
+	height: 70px;
+	width: 5%;
+}
+.signup {
+	margin: 20px;
+	margin-top: 12%;
+	margin-left: 30%;
+	position: relative;
+	top: -40px;
+}
+
+.navbar {
+	position: relative;
+	margin-bottom: 970px;
+	height: 120px;
+	top: 990px;
+}
+.navbar img {
+	height: 52%;
+	padding-right: 8%;
+	margin-bottom: 10px;
+}
+
+.login {
+	margin: 20px;
+	margin-top: 12%;
+	margin-left: 30%;
+}
+
+.header_link a {
+	color: white;
+	float: left;
+	position: relative;
+	left: 420px;
+	top: -49px;
+	border: 1px solid white;
+	margin-right: 10px;
+	text-decoration: none;
+	font-weight: 600;
+	height: 50%;
+	padding: 4px;
+}
+.header_link a:hover {
+	background-color: teal;
+	color: black;
+	transition: ease-in-out;
+	text-decoration: none;
+}
+.spane {
+	position: relative;
+	top: 40px;
+	left: -51%;
+}
+.spane a {
+	margin-right: 4px;
+}

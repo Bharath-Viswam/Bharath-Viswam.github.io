@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Tourism</title>
+    <style>
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            height: 100%;
+        }
+
+        .slideshow,
+        .slideshow:after {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: 0;
+        }
+
+        .slideshow:after {
+            content: '';
+            background: transparent;
+        }
+
+        .slideshow li span {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            color: transparent;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: none;
+            opacity: 0;
+            z-index: 0;
+            -webkit-backface-visibility: hidden;
+            -webkit-animation: imageAnimation 24s linear infinite 0s;
+            -moz-animation: imageAnimation 24s linear infinite 0s;
+            -o-animation: imageAnimation 24s linear infinite 0s;
+            -ms-animation: imageAnimation 24s linear infinite 0s;
+            animation: imageAnimation 24s linear infinite 0s;
+        }
+
+        .slideshow li:nth-child(1) span {
+            background-image: url('..//Images/pexels-pritha-ganguly-4056105.jpg');
+        }
+
+        .slideshow li:nth-child(2) span {
+            background-image: url('..//Images/pexels-joji-graison-10229156.jpg');
+            -webkit-animation-delay: 6s;
+            -moz-animation-delay: 6s;
+            -o-animation-delay: 6s;
+            -ms-animation-delay: 6s;
+            animation-delay: 6s;
+        }
+
+        .slideshow li:nth-child(3) span {
+            background-image: url('..//Images/jadayu.jpg');
+            -webkit-animation-delay: 12s;
+            -moz-animation-delay: 12s;
+            -o-animation-delay: 12s;
+            -ms-animation-delay: 12s;
+            animation-delay: 12s;
+        }
+
+        .slideshow li:nth-child(4) span {
+            background-image: url('..//Images/pexels-richard-mcalister-2780309.jpg');
+            -webkit-animation-delay: 18s;
+            -moz-animation-delay: 18s;
+            -o-animation-delay: 18s;
+            -ms-animation-delay: 18s;
+            animation-delay: 18s;
+        }
+
+        /* Animation for the slideshow images */
+        @-webkit-keyframes imageAnimation {
+            8% {
+                opacity: 1;
+                -webkit-transform: scale(1.05);
+                -webkit-animation-timing-function: ease-out;
+            }
+
+            17% {
+                opacity: 1;
+                -webkit-transform: scale(1.1);
+            }
+
+            25% {
+                opacity: 0;
+                -webkit-transform: scale(1.1);
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        @-moz-keyframes imageAnimation {
+            8% {
+                opacity: 1;
+                -moz-transform: scale(1.05);
+                -moz-animation-timing-function: ease-out;
+            }
+
+            17% {
+                opacity: 1;
+                -moz-transform: scale(1.1);
+            }
+
+            25% {
+                opacity: 0;
+                -moz-transform: scale(1.1);
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        @-o-keyframes imageAnimation {
+            8% {
+                opacity: 1;
+                -moz-transform: scale(1.05);
+                -moz-animation-timing-function: ease-out;
+            }
+
+            17% {
+                opacity: 1;
+                -moz-transform: scale(1.1);
+            }
+
+            25% {
+                opacity: 0;
+                -moz-transform: scale(1.1);
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        @-ms-keyframes imageAnimation {
+            8% {
+                opacity: 1;
+                -moz-transform: scale(1.05);
+                -moz-animation-timing-function: ease-out;
+            }
+
+            17% {
+                opacity: 1;
+                -moz-transform: scale(1.1);
+            }
+
+            25% {
+                opacity: 0;
+                -moz-transform: scale(1.1);
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        @keyframes imageAnimation {
+            8% {
+                opacity: 1;
+                -moz-transform: scale(1.05);
+                -moz-animation-timing-function: ease-out;
+            }
+
+            17% {
+                opacity: 1;
+                -moz-transform: scale(1.1);
+            }
+
+            25% {
+                opacity: 0;
+                -moz-transform: scale(1.1);
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        /* Show at least something when animations not supported */
+        .no-cssanimations .slideshow li span {
+            opacity: 1;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/style_edit_for_new_header.css">
+    <link rel="stylesheet" href="/Week01/bootstrap-4.5.3-dist/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/f3dc35dede.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <ul class="slideshow">
+        <li> <span></span> </li>
+        <li> <span></span> </li>
+        <li> <span></span> </li>
+        <li> <span></span> </li>
+    </ul>
+    <nav class=" navbar sticky-top navbar-expand-lg navbar-light bg-transparent">
+        <img src=" ..//Images/logo.png" alt="kerala_tourism_logo" id="new_img">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-dark" href="#" style="color: white;">Home </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-dark" href="login.html">LogIn</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-dark" href="signup.html">SignUp</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-dark " href="districts.html">Districts</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- <header>
+
+        
+
+        <div class="header_link">
+            <a href="">Home</a>
+
+            <a href="signup.html">SignUp</a>
+
+            <a href="login.html">Login</a>
+
+            <a href="districts.html">Districts</a>
+
+        </div>
+    </header> -->
+
+    <!-- As a link -->
+    <div class="content">
+        <p> <span id="oneletter">K</span>erala, located on the south-western tip of India, enjoys unique
+            geographical
+            features that have made it one
+            of the most sought-after tourist destinations in Asia. Fondly referred to as ‘God’s Own
+            Country’,
+            Kerala
+            was
+            selected by the National Geographic Traveller as one of the 50 destinations of a lifetime and
+            one of
+            the
+            thirteen paradises in the world.</p>
+        <p>An equable climate, serene beaches, tranquil stretches of backwaters, lush hill stations and
+            exotic
+            wildlife
+            are
+            the major attractions of this land. A unique advantage of Kerala is that most of the
+            destinations
+            here
+            are
+            only
+            a two - four hour drive from the other.</p>
+        <p>Classical art forms, colourful festivals, exotic cuisine are some of the cultural marvels that
+            await
+            travellers. Ayurveda, the ancient Indian system of medicine and Panchakarma, the rejuvenation
+            therapy in
+            Ayurveda have also helped Kerala to gain a pan-global reputation as a worth-visit destination.
+        </p>
+        <p>Season never ends in Kerala, thanks to the year-long moderate climate and numerous festivals and
+            events.
+        </p>
+
+
+    </div>
+
+    <div class="kollam">
+        <div class="card" style="width: 18rem;">
+            <img src="..//Images/jadayu.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Kollam</h5>
+                <p class="card-text"> From Ibn Batuta to Marco Polo, legendary explorers have talked about
+                    the
+                    prominence of Kollam district
+                    for
+                    centuries. Blessed with a long coastline, it is the de facto leader of the cashew trade
+                    and
+                    processing</p>
+                <a href="kollam.html" class="btn btn-primary">Read More</a>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="tvm">
+        <div class="card" style="width: 18rem;">
+            <img src="..//Images/tvM_.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Thiruvananthapuram</h5>
+                <p class="card-text"> Thiruvananthapuram (or Trivandrum) is the capital of the southern
+                    Indian
+                    state
+                    of
+                    Kerala. It's distinguished
+                    by its British colonial architecture and many art galleries. It's also home to Kuthira
+                    Malika
+                    (or
+                    Puthen
+                </p>
+                <a href="thiruvanathapuram.html" class="btn btn-primary">Read More</a>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="idukki">
+        <div class="card" style="width: 18rem;">
+            <img src="..//Images/idukki.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Idukki</h5>
+                <p class="card-text"> Idukki is Kerala's second largest district and has been blessed with
+                    numerous
+                    natural wonders. The high
+                    valleys and hill ranges of this landlocked region are fed by three major rivers -
+                    Periyar,
+                    Thalayar
+                    and
+                </p>
+                <a href="idukki.html" class="btn btn-primary">Read More</a>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="alappuzha">
+        <div class="card" style="width: 18rem;">
+            <img src="..//Images/pexels-pritha-ganguly-4056105.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Alappuzha</h5>
+                <p class="card-text">
+                    Referred to as the Venice of the East, Alappuzha has always enjoyed an important place
+                    in
+                    the
+                    maritime
+                    history of Kerala. Today, it is famous for its boat races, backwater holidays, beaches,
+                    marine
+                    products and
+                    coir industry.
+                </p>
+                <a href="alappuzha.html" class="btn btn-primary">Read More</a>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="wayanad">
+        <div class="card" style="width: 18rem;">
+            <img src="..//Images/wayanad20131106143924_373_1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Wayanad</h5>
+                <p class="card-text">
+                    Adorning the northern hills of Kerala is the beautiful district of Wayanad, maintained
+                    by
+                    the
+                    District
+                    Tourism Promotion Council, Wayanad. This area is famous for its large amount of camping
+                    and
+                    trekking
+                    trails,
+                </p>
+                <a href="wayanad.html" class="btn btn-primary">Read More</a>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="district_button">
+        <a href="districts.html" class="btn btn-primary">Go To District's Page</a>
+    </div>
+    <nav class="footer_nav " style="background-color: black;">
+        <div id="spane">
+            <a href="#"><i class="fa-brands fa-facebook logo" style="color: aliceblue;"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter logo" style="color: aliceblue;"></i></a>
+            <a href="#"> <i class="fa-brands fa-instagram logo" style="color: aliceblue;"></i></a>
+            <a href="#"><i class="fa-brands fa-dribbble logo" style="color: aliceblue;"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest logo" style="color: aliceblue;"></i></a>
+            <a href="#"><i class="fa-brands fa-google logo" style="color: aliceblue;"></i></a>
+
+
+        </div>
+        <div class="footerimg"><img src="..//Images/footer.png" alt=""></div>
+
+
+
+
+
+        <div>
+            <h4 style="position:absolute; top: 340px; left: 160px;  "> Department of
+                Tourism,
+                Government
+                of Kerala,
+                Park View,
+                Thiruvananthapuram,
+                Kerala, India - 695 033
+            </h4>
+            <h4 style="position: absolute; top: 400px; left:260px">
+                Phone: +91 471 2321132, Fax: +91 471 2322279, E-mail: info@keralatourism.org.
+            </h4>
+            <h4 style="position: absolute; top:450px; left: 220px;">
+                All rights reserved © Kerala Tourism 2022. Copyright | Terms of Use | Cookie Policy |
+                Contact
+                Us.
+            </h4>>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <!-- next implementation to do  in footer -->
+    <!-- a horizontal line then -->
+    <!-- Department of Tourism, Government of Kerala, Park View, Thiruvananthapuram, Kerala, India - 695 033
+Phone: +91 471 2321132, Fax: +91 471 2322279, E-mail: info@keralatourism.org.
+All rights reserved © Kerala Tourism 2022. Copyright | Terms of Use | Cookie Policy | Contact Us.
+Developed & Maintained by Invis Multimedia. -->
+
+
+    <!-- carousal idea for main landing page -->
+    <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../Images/pexels-godson-bright-962464.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../Images/pexels-joji-graison-10229156.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..//Images/pexels-richard-mcalister-2780309.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div> -->
+
+
+
+</body>
+
+</html>

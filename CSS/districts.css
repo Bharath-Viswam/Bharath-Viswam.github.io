@@ -1,0 +1,29 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+.btn-primary {
+	padding: 5px;
+}
+.carousel-inner img {
+	height: 750px;
+	background-size: cover;
+}
+/* next task navbar transparent how */
+h5 a {
+	text-decoration: none;
+	color: white;
+}
+h5 a:hover {
+	text-decoration: none;
+	color: white;
+}
+.carousel-indicators {
+	position: absolute;
+	top: 640px;
+}
+h5 {
+	position: absolute;
+	top: -100px;
+	left: 44%;
+}

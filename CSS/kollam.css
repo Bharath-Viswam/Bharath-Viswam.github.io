@@ -1,0 +1,73 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-size: cover;
+}
+
+h1 {
+	position: relative;
+	top: 0;
+	left: -800px;
+}
+.carousel-inner img {
+	height: 300px;
+}
+
+.kollam a {
+	text-decoration: none;
+	color: black;
+}
+/* .carousel-indicators {
+	position: relative;
+	top: 400px;
+}
+.carousel {
+	position: relative;
+	top: 200px;
+	left: 200px;
+	height: 500px;
+	margin-bottom: 400px;
+	width: 500px;
+} */
+.carousel-indicators {
+	position: relative;
+	top: 360px;
+	left: -13px;
+}
+#navkollam #dis {
+	position: relative;
+	left: 54%;
+}
+.carousel {
+	position: relative;
+	top: 160px;
+	left: 200px;
+	height: 500px;
+	margin-bottom: 340px;
+	width: 500px;
+}
+#h2 {
+	background-color: rgb(191, 197, 202);
+	width: 26%;
+	position: relative;
+	top: 280px;
+	left: 30%;
+	color: black;
+}
+.introduction {
+	opacity: 60%;
+	position: relative;
+	top: 200px;
+	left: 0;
+	height: 280px;
+	color: black;
+	font-weight: 500;
+	background-color: rgb(199, 211, 221);
+}
+.introduction p {
+	word-spacing: 5px;
+	font-size: large;
+	text-align: justify;
+}
