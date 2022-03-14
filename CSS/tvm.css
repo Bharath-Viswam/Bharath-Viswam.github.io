@@ -51,13 +51,12 @@ h1 {
 	left: 0;
 	height: 280px;
 	color: black;
-	font-weight: 500;
 
 	background-color: rgb(199, 211, 221);
 }
 .introduction p {
 	word-spacing: 5px;
-	font-size: larger;
+	font-size: x-large;
 	font-weight: 400;
 	text-align: justify;
 }
