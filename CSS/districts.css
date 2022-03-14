@@ -2,6 +2,9 @@
 	padding: 0;
 	margin: 0;
 }
+body {
+	zoom: 90%;
+}
 .btn-primary {
 	padding: 5px;
 }

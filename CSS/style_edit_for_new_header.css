@@ -15,6 +15,9 @@
 	width: 1500px;
 	top: 0px;
 } */
+body {
+	zoom: 90%;
+}
 footer {
 	position: absolute;
 	padding-bottom: 970px;
