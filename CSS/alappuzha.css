@@ -56,7 +56,8 @@ h1 {
 	background-color: rgb(199, 211, 221);
 }
 .introduction p {
+	font-size: large;
 	word-spacing: 5px;
-	font-weight: 400;
+	font-weight: 450;
 	text-align: justify;
 }
