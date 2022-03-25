@@ -17,6 +17,17 @@ let regexp_obj = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?
 //regexp_one_lower_c - paswd lower case regular exp
 //regexp_one_digit - paswd  digit regular exp
 //regexp_obj - email regexp
+
+function pos_fix() {
+	if (paswd_signuplbl.innerText != '' || phnmb_signuplbl.innerText != '') {
+		paswd_span_signup.style.top = '260px';
+		paswd_span_signup.style.left = '990px';
+	} else {
+		paswd_span_signup.style.top = '286px';
+		paswd_span_signup.style.left = '990px';
+	}
+}
+
 //TODO to create  event listner similar to the one we had for login page
 let timeout;
 paswd_signup.addEventListener('input', () => {
@@ -118,6 +129,7 @@ function validation_snup() {
 			email_signuplbl.style.color = 'red';
 			paswd_signuplbl.style.display = 'none';
 			phnmb_signuplbl.style.display = 'none';
+			pos_fix();
 			return false;
 		} else if (paswd_signup.value.trim() == '') {
 			paswd_signuplbl.style.display = 'block';
@@ -125,7 +137,7 @@ function validation_snup() {
 			paswd_signuplbl.style.color = 'red';
 			phnmb_signuplbl.style.display = 'none';
 			email_signuplbl.style.display = 'none';
-
+			pos_fix();
 			return false;
 		} else if (phnmb_signup.value.trim() == '') {
 			phnmb_signuplbl.style.display = 'block';
@@ -133,17 +145,20 @@ function validation_snup() {
 			phnmb_signuplbl.style.color = 'red';
 			paswd_signuplbl.style.display = 'none';
 			email_signuplbl.style.display = 'none';
+			pos_fix();
 			return false;
 		}
 	} else if (regexp_obj.test(email_signup.value.trim()) == false) {
 		phnmb_signuplbl.style.display = 'block';
 		email_signuplbl.style.display = 'block';
 		paswd_signuplbl.style.display = 'block';
+
 		pwd_indicator_signup();
 		if (paswd_signup.value.trim() != '') {
 			email_signuplbl.innerText = 'email should be in the correct format';
 			email_signuplbl.style.color = 'red';
 			paswd_signuplbl.innerText = '';
+			pos_fix();
 			return false;
 		} else {
 			email_signuplbl.innerText = 'email should be in the correct format';
@@ -152,6 +167,7 @@ function validation_snup() {
 		}
 	} else if (regexp_obj.test(email_signup.value.trim())) {
 		pwd_indicator_signup();
+
 		phnmb_signuplbl.style.display = 'block';
 		email_signuplbl.style.display = 'block';
 		paswd_signuplbl.style.display = 'block';
@@ -159,25 +175,25 @@ function validation_snup() {
 			email_signuplbl.innerText = '';
 			paswd_signuplbl.innerText = 'password should be atleast 8 letters long';
 			paswd_signuplbl.style.color = 'red';
-
+			pos_fix();
 			return false;
 		} else if (regexp_one_lower_c.test(paswd_signup.value.trim()) == false) {
 			email_signuplbl.innerText = '';
 			paswd_signuplbl.innerText = 'password should contain atleast one lower case letter';
 			paswd_signuplbl.style.color = 'red';
-
+			pos_fix();
 			return false;
 		} else if (regexp_one_upper_c.test(paswd_signup.value.trim()) == false) {
 			email_signuplbl.innerText = '';
 			paswd_signuplbl.innerText = 'password should contain atleast one upper case letter';
 			paswd_signuplbl.style.color = 'red';
-
+			pos_fix();
 			return false;
 		} else if (regexp_one_digit.test(paswd_signup.value.trim()) == false) {
 			email_signuplbl.innerText = '';
 			paswd_signuplbl.innerText = 'password should  contain atleast one digit';
 			paswd_signuplbl.style.color = 'red';
-
+			pos_fix();
 			return false;
 		}
 	}
@@ -186,10 +202,12 @@ function validation_snup() {
 
 		phnmb_signuplbl.innerText = 'phno should be in the correct format!';
 		phnmb_signuplbl.style.color = 'red';
+		pos_fix();
 		return false;
 	} else {
 		//TODO Important doubt to be rectified in js you know  if one code doesnt work the rest below does'nt work,so how should we find such errors, which stop below code from executing!!//
 		pwd_indicator_signup();
+
 		phnmb_signuplbl.style.display = 'block';
 		email_signuplbl.style.display = 'block';
 		paswd_signuplbl.style.display = 'block';
@@ -202,6 +220,7 @@ function validation_snup() {
 			email_signuplbl.style.display = 'block';
 			paswd_signuplbl.style.display = 'block';
 			pwd_indicator_signup();
+
 			if (paswd_signup.value.trim() != '') {
 				email_signuplbl.innerText = 'email should be in the correct format';
 				email_signuplbl.style.color = 'red';
@@ -219,25 +238,25 @@ function validation_snup() {
 				email_signuplbl.innerText = '';
 				paswd_signuplbl.innerText = 'password should be atleast 8 letters long';
 				paswd_signuplbl.style.color = 'red';
-
+				pos_fix();
 				return false;
 			} else if (regexp_one_lower_c.test(paswd_signup.value.trim()) == false) {
 				email_signuplbl.innerText = '';
 				paswd_signuplbl.innerText = 'password should contain atleast one lower case letter';
 				paswd_signuplbl.style.color = 'red';
-
+				pos_fix();
 				return false;
 			} else if (regexp_one_upper_c.test(paswd_signup.value.trim()) == false) {
 				email_signuplbl.innerText = '';
 				paswd_signuplbl.innerText = 'password should contain atleast one upper case letter';
 				paswd_signuplbl.style.color = 'red';
-
+				pos_fix();
 				return false;
 			} else if (regexp_one_digit.test(paswd_signup.value.trim()) == false) {
 				email_signuplbl.innerText = '';
 				paswd_signuplbl.innerText = 'password should  contain atleast one digit';
 				paswd_signuplbl.style.color = 'red';
-
+				pos_fix();
 				return false;
 			}
 		}
@@ -246,6 +265,7 @@ function validation_snup() {
 
 			phnmb_signuplbl.innerText = 'phno should be in the correct format!';
 			phnmb_signuplbl.style.color = 'red';
+			pos_fix();
 			return false;
 		} else {
 			return true;

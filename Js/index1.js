@@ -9,9 +9,22 @@ let regexp_one_upper_c = new RegExp('(?=.*[A-Z])');
 let regexp_one_lower_c = new RegExp('(?=.*[a-z])');
 let regexp_one_digit = new RegExp('(?=.*[0-9])');
 let regexp_obj = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
+function pos_fix() {
+	if (pwd_label.innerText != '') {
+		pwd_span.style.top = '143px';
+		pwd_span.style.left = '510px';
+	} else if (email_label.innerText == '' && regexp_obj__test.test(pwd_.value.trim())) {
+		pwd_span.style.top = '143px';
+		pwd_span.style.left = '510px';
+	} else {
+		pwd_span.style.top = '166px';
+		pwd_span.style.left = '510px';
+	}
+}
 function pwd_indicator() {
 	if (regexp_obj__test.test(pwd_.value.trim())) {
 		pwd_span.innerText = 'Strong';
+
 		pwd_span.style.border = '4px solid green';
 		pwd_span.style.padding = '2px';
 		pwd_span.style.background = 'green';
@@ -40,36 +53,44 @@ pwd_.addEventListener('input', () => {
 	timeout = setTimeout(() => pwd_indicator(pwd_.value), 500);
 	if (pwd_.value.length !== 0) {
 		pwd_span.style.display != 'block';
+		pos_fix();
 	} else {
 		pwd_span.style.display = 'none';
+		pos_fix();
 	}
 });
 
 pwd_.addEventListener('input', () => {
 	pwd_label.style.display = 'block';
-
+	pos_fix();
 	clearTimeout(timeout);
 	timeout = setTimeout(() => validation(pwd_.value), 500);
 	if (regexp_obj__test.test(pwd_.value.trim()) && pwd_.value.length > 8) {
 		pwd_label.style.display = 'none';
+		pos_fix();
 	} else if (pwd_.value.length == 0 || pwd_.value.length < 8) {
 		pwd_label.style.display != 'block';
+		pos_fix();
 	} else {
 		pwd_label.style.display = 'block';
+		pos_fix();
 	}
 });
 
 email_.addEventListener('input', () => {
 	email_label.style.display = 'block';
-
+	pos_fix();
 	clearTimeout(timeout);
 	timeout = setTimeout(() => validation(email_.value), 500);
 	if (regexp_obj__test.test(email_.value.trim()) && email_.value.length > 8) {
 		email_label.style.display = 'none';
+		pos_fix();
 	} else if (email_.value.length == 0) {
 		email_label.style.display != 'block';
+		pos_fix();
 	} else {
 		email_label.style.display = 'block';
+		pos_fix();
 	}
 });
 //TODO Email validation via event listener
@@ -78,6 +99,7 @@ function validation() {
 	//TODO Email Validation First- email validate wrong
 	pwd_label.innerText = '';
 	email_label.innerText = '';
+	pos_fix();
 	if (regexp_obj__test.test(pwd_.value.trim())) {
 		pwd_span.innerText = 'Strong';
 		pwd_span.style.border = '4px solid green';
@@ -93,6 +115,7 @@ function validation() {
 			pwd_label.innerText = '';
 			email_label.style.display = 'block';
 			pwd_label.style.display = 'none';
+			pos_fix();
 			return false;
 		} else if (pwd_.value.trim() == '') {
 			pwd_label.innerText = 'password field should not be empty';
@@ -100,6 +123,7 @@ function validation() {
 			email_label.innerText = '';
 			email_label.style.display = 'none';
 			pwd_label.style.display = 'block';
+			pos_fix();
 			return false;
 		}
 	} else if (regexp_obj.test(email_.value.trim()) == false) {
@@ -111,10 +135,12 @@ function validation() {
 			email_label.innerText = 'email should be in the correct format';
 			email_label.style.color = 'red';
 			pwd_label.innerText = '';
+			pos_fix();
 			return false;
 		} else {
 			email_label.innerText = 'email should be in the correct format';
 			email_label.style.color = 'red';
+			pos_fix();
 			return false;
 		}
 	} else if (regexp_obj.test(email_.value.trim())) {
@@ -126,36 +152,38 @@ function validation() {
 			email_label.innerText = '';
 			pwd_label.innerText = 'password should be atleast 8 letters long';
 			pwd_label.style.color = 'red';
-
+			pos_fix();
 			return false;
 		} else if (regexp_one_lower_c.test(pwd_.value.trim()) == false) {
 			email_label.innerText = '';
 			pwd_label.innerText = 'password should contain atleast one lower case letter';
 			pwd_label.style.color = 'red';
-
+			pos_fix();
 			return false;
 		} else if (regexp_one_upper_c.test(pwd_.value.trim()) == false) {
 			email_label.innerText = '';
 			pwd_label.innerText = 'password should contain atleast one upper case letter';
 			pwd_label.style.color = 'red';
-
+			pos_fix();
 			return false;
 		} else if (regexp_one_digit.test(pwd_.value.trim()) == false) {
 			email_label.innerText = '';
 			pwd_label.innerText = 'password should  contain atleast one digit';
 			pwd_label.style.color = 'red';
-
+			pos_fix();
 			return false;
 		}
 	} else {
 		//TODO Important doubt to be rectified in js you know  if one code doesnt work the rest below does'nt work,so how should we find such errors, which stop below code from executing!!//
 		pwd_indicator();
-
+		pos_fix();
 		email_label.style.display = 'block';
 		pwd_label.style.display = 'block';
 		if (regexp_obj.test(email_.value) == false) {
+			pos_fix();
 			return false;
 		} else {
+			pos_fix();
 			return true;
 		}
 	}
